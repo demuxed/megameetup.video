@@ -391,7 +391,7 @@ h1, h2, h3, h4, h5 {
 
 
     @include mq($med-large) {
-      max-width: 55%;
+      width: 55%;
     }
 
     h3 {
@@ -427,6 +427,7 @@ h1, h2, h3, h4, h5 {
 
     h4 {
       line-height: 1.7;
+      padding-top: 1em;
 
       /*font clamp fallbacks*/
         font-size: 3.3vw;
