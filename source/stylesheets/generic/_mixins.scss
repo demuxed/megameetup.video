@@ -1,0 +1,102 @@
+/* Font size */
+@mixin font-size($font-size){
+  font-size: $font-size;
+  font-size: ($font-size / $base-font-size)*1rem;
+  line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+}
+
+/* Vendor */
+@mixin vendor($property, $value...){
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
+}
+
+/* Buttons */
+@mixin btn {
+  display: inline-block;
+  padding: 0 1em;
+  text-transform: uppercase;
+  text-align: center;
+  @include font-size(16px);
+  color: #000;
+  background-color: #fff;
+  letter-spacing: 0.1em;
+  font-family: $button-font;
+  font-weight: 700;
+  
+  &:hover {
+    background-color: $brand-red;
+    color: #fff;
+  }
+}
+
+@mixin brand-gradient-reverse {
+  background: #3b3f77; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #3b3f77 0%, #6b59ef 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #3b3f77 0%,#6b59ef 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #3b3f77 0%,#6b59ef 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b3f77', endColorstr='#6b59ef',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+
+@mixin social-icons {
+  a {
+    @include transition-all;
+    height: 50px;
+    width: 50px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &.facebook {
+      @extend %facebook;
+    }
+
+    &.twitter {
+      @extend %twitter;
+    }
+
+    &.instagram {
+      @extend %instagram;
+    }
+    
+    &.youtube {
+      @extend %youtube;
+    }
+  }  
+}
+
+
+/* MQs */
+@mixin mq($point, $IE9: false, $query1: min, $query2: width){
+  @if $IE9 == true{
+    .lt-ie9 & {
+      @content;
+    }
+  }
+
+  @media (#{$query1}-#{$query2}: $point / 16 +em){
+    @content;
+  }
+}
+
+@mixin orient($orientation: landscape){
+  @media (orientation : $orientation){
+    @content;
+  }
+}
+
+@mixin transition-all {
+  -webkit-transition: $transition-speed;
+  -moz-transition: $transition-speed;
+  -ms-transition: $transition-speed;
+  -o-transition: $transition-speed;
+  transition: $transition-speed;
+}
+
+@mixin animate-in {
+   animation: fadein .5s ease-in;
+}

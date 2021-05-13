@@ -1,0 +1,149 @@
+.page-foot {
+  background: #000;
+  text-align: center;
+  color: #fff;
+
+  @include mq($med-large) {
+    text-align: left;
+    padding-bottom: 2em;
+  }
+
+  .container {
+    @include mq($med-large) {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 4vw 5vw;
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    margin-bottom: 1em;
+
+    @include mq($med-large) {
+      display: block;
+    }
+
+    @include mq($wide) {
+      width: 18%;
+    }
+  }
+
+  .page-foot__header {
+    margin-bottom: 3em;
+
+    @include mq($med-large) {
+      width: 40%;
+      margin: 0;
+    }
+
+    @include mq($large) {
+      width: 60%
+    }
+
+    .nerds {
+      font-weight: 600;
+
+      /*font clamp fallbacks*/
+        font-size: 3.3vw;
+
+        @include mq($medium) {
+          font-size: 2vw;
+        }
+
+        @include mq($med-large) {
+          font-size: 1.6vw;
+        }
+
+        @include mq($xl-large) {
+          font-size: 1.2vw;
+        }
+
+        @include mq($super-wide) {
+          font-size: 1vw;
+        }
+      /*font clamp fallbacks*/
+      font-size: clamp(1.1rem, 1.2vw, 1.6rem)!important;
+
+      @include mq($med-large) {
+        margin-bottom: 0;
+        display: block;
+      }
+
+      span {
+        margin: 0 0.2em 0 0;
+      }
+    }
+  }
+
+
+
+  .page-foot__nav {
+    margin-bottom: 3em;
+
+    @include mq($med-large) {
+      margin: 0;
+      width: 55%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @include mq($large) {
+      width: 30%
+    }
+
+    li {
+      list-style-type: none;
+        margin-left: 1em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .nav-item {
+      list-style-type: none;
+      margin-bottom:1.1em;
+
+      @include mq($med-large) {
+        margin-bottom: 0;
+      }
+
+      a {
+
+      /*font clamp fallbacks*/
+        font-size: 3vw;
+
+        @include mq($small) {
+          font-size: 2vw;
+        }
+
+        @include mq($medium) {
+          font-size: 1.8vw;
+        }
+
+        @include mq($med-large) {
+          font-size: 1.4vw;
+        }
+
+        @include mq($large) {
+          font-size: 1.1vw;
+        }
+      /*font clamp fallbacks*/
+
+        @include transition-all;
+        display: block;
+        font-family: $button-font;
+        font-weight: 700;
+        color: #fff;
+        
+        font-size: clamp(0.9rem, 1.1vw, 1.2rem)!important;
+        
+        &:hover {
+          color: $brand-red;
+        }
+      }
+    }
+  }
+}

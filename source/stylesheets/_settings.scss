@@ -1,0 +1,39 @@
+/* Settings */
+$base-font-size: 15px!default;
+$base-line-height: 23px!default;
+
+$default-sans: "Poppins", sans-serif!default;
+$button-font: "Poppins", sans-serif!default;
+$headline-font: "Poppins", sans-serif!default;
+
+/*Colours*/
+$brand-creme: #ebe9dc;
+$brand-red: #db2523;
+
+$selection-color: #ffbcc5!default;
+$font-color: #242a31!default;
+$link-color: #db2523!default;
+
+/*Type spacing*/
+$base-spacing-unit: $base-line-height!default;
+$half-spacing-unit: $base-spacing-unit / 2!default;
+$line-height-ratio: $base-line-height / $base-font-size;
+
+$max-width: 87.5em; // 1400px
+
+/*Break points*/
+/*Pixel settings (auto convereted to em's)*/
+$tiny: 320;
+$tiny-small: 360;
+$small: 600;
+$medium: 760;
+$med-large: 960;
+$large: 1100;
+$x-large: 1200;
+$xl-large: 1400;
+$wide: 1600;
+$super-wide: 1800;
+$jumbo: 2500;
+
+/*animation*/
+$transition-speed: all 0.2s ease-out;

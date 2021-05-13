@@ -1,0 +1,14 @@
+%header.page-head
+  %div.container
+    %a.logo{:href => "/index.html"}
+      = image_tag "/images/svg/logo.svg", :alt => "Co Video", :class => ""
+
+    %a#js-menu-btn.menu-btn(href="#")
+    %nav#js-main-nav.page-head__nav
+      %ul
+        %li.nav-item
+          = link_to "About", "#about"
+        %li.nav-item
+          = link_to "Schedule", "#schedule"
+        %li.nav-item
+          = link_to "Get in touch", "#"

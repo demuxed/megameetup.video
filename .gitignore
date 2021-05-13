@@ -1,0 +1,16 @@
+# Ignore GitHub CNAME
+docs/CNAME
+
+# Ignore bundler config
+/.bundle
+
+# Ignore the build directory
+/build
+
+# Ignore cache
+/.cache
+
+_site
+.sass-cache
+.jekyll-metadata
+.DS_Store

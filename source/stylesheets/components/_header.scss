@@ -1,0 +1,149 @@
+.page-head {
+  z-index: 100;
+  position: relative;
+  width: 100%;
+  margin-bottom: 1em;
+
+  @include mq($small) {
+    margin-bottom: 0;
+  }
+
+  .container {
+    padding: 4vw 8vw;
+
+    @include mq($med-large) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+
+.logo {
+  display: block;
+  width: 155px;
+  padding-top: 0.3em;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include mq($small) {
+    padding-top: 0;
+  }
+
+  @include mq($med-large) {
+    margin: 0;
+    /*float: left;*/
+  } 
+
+  @include mq($wide) {
+    width: 12%;
+  } 
+
+  img {
+    width: 100%;
+  }     
+}
+
+.menu-btn {
+  @extend %device-menu-btn-open;
+
+  width: 70px;
+  height: 65px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 66%;
+  display: block;
+  position: absolute;
+  top: 1vw;
+  right: 3vw;
+  z-index: 100;
+
+  @include mq($med-large) {
+    display: none;
+  }
+}
+
+.page-head__nav {
+  position: absolute;
+  top:0;
+  left: 0;
+  clear: both;
+  width: 100%;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  padding-left: 1em;
+  background-color: #000;
+  -webkit-box-shadow: 0px 10px 49px -1px rgba(0,0,0,0.45);
+  -moz-box-shadow: 0px 10px 49px -1px rgba(0,0,0,0.45);
+  box-shadow: 0px 10px 49px -1px rgba(0,0,0,0.45);
+
+
+  @include mq($med-large) {
+    position: static;
+    clear: right;
+    float: right;
+    background: none;
+    width: auto;
+    padding: 0;
+    border: 0;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .nav-item {
+    position: relative;
+    list-style-type: none;
+
+    @include mq($med-large) {
+      border: 0;
+      display: inline-block;
+      margin-left: 1.3em;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    a {
+      @include transition-all;
+      display: block;
+      color: #fff;
+      @include font-size(18px);
+      font-family: $button-font;
+      font-weight: 600;
+      padding: 1.5em;
+      border-radius: 10px 0 0 10px;
+
+      @include mq($med-large) {
+        padding: 0;
+        color: #000;
+        font-size: 1.1vw;
+        font-size: clamp(0.8rem, 0.9vw, 1.1rem);
+      }
+
+      @include mq($large) {
+        font-size: 0.9vw;
+        font-size: clamp(0.8rem, 0.9vw, 1.1rem);
+      }
+    }
+
+    a:hover, &.selected a {
+      text-decoration: none;
+      background: rgba(0,0,0,0.8);
+      color: $brand-creme;
+      padding-left: 2em;
+
+      @include mq($med-large) {
+        padding-left: 0;
+        opacity: 1;
+        text-decoration: none;
+        background: 0;
+        color: $brand-red;
+      }
+    }
+  }
+}

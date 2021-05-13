@@ -1,0 +1,482 @@
+/* Page Core / Structure */
+html{
+  font-family: $default-sans;
+  font-size: 100%;
+  font-weight: 500;
+  line-height: $line-height-ratio;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,body{
+  height: 100%;
+}
+
+.wrapper{
+  position: relative;
+  @include animate-in;
+  background-color: $brand-creme;
+
+  @include mq($medium) {
+    border: solid 20px #000;
+  }
+}
+  
+canvas{
+  -ms-touch-action: double-tap-zoom;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: $default-sans;
+}
+
+.container {
+  position: relative;
+}
+
+.main-content {
+  li {
+    line-height: 1.6em;
+  }
+
+  p {
+    @include font-size(16px);
+    line-height: 1.6em;
+
+    a {
+      &:hover {
+      border-bottom: solid 2px $brand-creme;
+      }
+    }
+  }
+
+  .container {
+    padding: 5vw 8vw;
+
+    @include mq($medium) {
+      padding: 5vw 5vw;
+    }
+  }
+}
+
+.section-heading {
+  text-transform: uppercase;
+  font-family: $headline-font;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 0.7em;
+  line-height: 1.2;
+
+  /*font clamp fallbacks*/
+    font-size: 5.8vw;
+
+    @include mq($small) {
+      font-size: 4vw;
+    }
+
+    @include mq($med-large) {
+      font-size: 2.8vw;
+    }
+
+    @include mq($super-wide) {
+      font-size: 2.3vw;
+    }
+  /*font clamp fallbacks*/
+
+  font-size: clamp(2rem, 3.4vw, 5rem)!important;
+
+  span {
+    color: $brand-red;
+    text-transform: capitalize;
+    display: block;
+
+    /*font clamp fallbacks*/
+      font-size: 3.8vw;
+
+      @include mq($small) {
+        font-size: 2.8vw;
+      }
+
+      @include mq($medium) {
+        font-size: 1.8vw;
+      }
+
+      @include mq($med-large) {
+        font-size: 1.6vw;
+      }
+
+      @include mq($large) {
+        font-size: 1.3vw;
+      }
+    /*font clamp fallbacks*/
+
+    margin-bottom:1.1em;
+    font-family: $headline-font;
+    font-size: clamp(1.1rem, 1.2vw, 1.5rem)!important;
+  }
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  background-image: url('/images/svg/world-map.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .container {
+    padding: 0 0 8vw 0;
+    
+
+    @include mq($medium) {
+      padding: 10vw 0;
+    }
+  }
+  
+  .hero__text {
+    position: relative;
+    z-index: 10;
+    padding: 0 6vw;
+    
+     @include mq($medium) {
+       display: inline-block;
+    }
+    
+     @include mq($med-large) {
+       width: 100%;
+    }
+    
+    @include mq($large) {
+      padding: 0;
+   }
+   
+   .hero__heading {
+    font-family: $headline-font;
+    font-weight: 900;
+
+    .breaker {
+      display: none;
+
+      @include mq($small) {
+        display: block;
+      }
+    }
+
+    /*font clamp fallbacks*/
+    font-size: 6.5vw;
+
+    @include mq($small) {
+      font-size: 4.5vw;
+    }
+
+    @include mq($med-large) {
+      font-size: 5vw;
+    }
+
+    @include mq($xl-large) {
+      font-size: 6vw;
+    }
+
+    @include mq($wide) {
+      font-size: 8vw;
+    }
+    /*font clamp fallbacks*/
+
+     font-size: clamp(3.5rem, 10vw, 26rem)!important;
+     font-weight: 900;
+     margin-bottom: 0.3em;
+     line-height: 1;
+     
+    @include mq($medium) {
+      /*max-width: 80%;*/
+      margin: 0 auto 0.3em;
+    }
+
+    @include mq($med-large) {
+      max-width: 100%;
+      margin: 0 0 0.2em 0;
+    }
+   }
+
+  .hero__sub-heading {
+    font-weight: 700;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    text-align: center;
+    color: $brand-red;
+
+    /*font clamp fallbacks*/
+      font-size: 4vw;
+
+      @include mq($small) {
+        font-size: 2.8vw;
+      }
+
+      @include mq($med-large) {
+        font-size: 1.75vw;
+      }
+
+      @include mq($super-wide) {
+        font-size: 1.3vw;
+      }
+    /*font clamp fallbacks*/
+
+    font-size: clamp(1.3rem, 1.7vw, 3rem)!important;
+
+    @include mq($small) {
+      margin: 0 auto 1.6em;
+    }
+  }
+
+   .hero__btn {
+      z-index: 20;
+      position: relative;
+      @include btn;
+      width: 100%;
+      padding: 1em 0;
+      @include transition-all;
+      margin-bottom: 1em;
+      color: #fff;
+      background-color: #000;
+
+     &:last-child {
+      margin-bottom: 0;
+     }
+
+      /*font clamp fallbacks*/
+        font-size: 3.6vw;
+
+        @include mq($small) {
+          font-size: 2.3vw;
+        }
+
+        @include mq($med-large) {
+          font-size: 1.5vw;
+        }
+
+        @include mq($super-wide) {
+          font-size: 1vw;
+        }
+
+        @include mq($jumbo) {
+          font-size: 0.8vw;
+        }
+      /*font clamp fallbacks*/
+
+     font-size: clamp(1.1rem, 1.4vw, 5rem)!important;
+
+     @include mq($tiny) {
+       width: 65%;
+    }
+
+     @include mq($small) {
+       padding: 0.8em;
+       width: 12em;
+       margin: 0;
+       margin-left: 1em;
+
+       &:first-child {
+        margin-left: 0;
+       }
+     }
+
+     @include mq($x-large) {
+      width: 13em;
+     }
+   }
+  }
+}
+
+.about-us {
+  .section-heading {
+    text-align: left;
+  }
+
+  .container {
+    @include mq($med-large) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .about-us__text {
+    @include mq($med-large) {
+      max-width: 44%;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 2em;
+
+      /*font clamp fallbacks*/
+        font-size: 3.6vw;
+
+        @include mq($small) {
+          font-size: 2.3vw;
+        }
+
+        @include mq($med-large) {
+          font-size: 1.5vw;
+        }
+
+        @include mq($super-wide) {
+          font-size: 1vw;
+        }
+
+        @include mq($jumbo) {
+          font-size: 0.8vw;
+        }
+      /*font clamp fallbacks*/
+
+      font-size: clamp(1.15rem, 1.3vw, 1.6rem)!important;
+    }
+  }
+
+  .about-us__img-mobile {
+
+    @include mq($med-large) {
+      display: none;
+    }
+  }
+
+  .about-us__img {
+    max-width: 620px;
+    display: none;
+
+    @include mq($med-large) {
+      display: block;
+      max-width: 44%;
+    }
+  }
+}
+
+.schedule {
+
+  @include mq($med-large) {
+    background-image:
+      url('/images/svg/dots.svg'), url('/images/svg/dots.svg');
+    background-repeat:
+      no-repeat, no-repeat;
+    background-position:
+      5% top, 95% 95%;
+    background-size:
+      200px, 200px;
+  }
+
+  .section-heading {
+    margin-bottom: 1.7em;
+  }  
+}
+
+.schedule-list {
+  @include mq($med-large) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    list-style-type: none;
+    background-color: #fff;
+    padding: 3em;
+    margin-bottom: 2em;
+
+
+    @include mq($med-large) {
+      max-width: 55%;
+    }
+
+    h3 {
+      color: $brand-red;
+      /*font clamp fallbacks*/
+        font-size: 4vw;
+
+        @include mq($medium) {
+          font-size: 3vw;
+        }
+
+        @include mq($med-large) {
+          font-size: 1.8vw;
+        }
+
+        @include mq($xl-large) {
+          font-size: 1.3vw;
+        }
+
+        @include mq($super-wide) {
+          font-size: 1vw;
+        }
+      /*font clamp fallbacks*/
+        font-size: clamp(1.3rem, 1.6vw, 2.1rem) !important;
+        margin-bottom: 0.1em;
+        line-height: 1.5;
+
+        span {
+          color: #000;
+        }
+
+      }
+
+    h4 {
+      line-height: 1.7;
+
+      /*font clamp fallbacks*/
+        font-size: 3.3vw;
+
+        @include mq($medium) {
+          font-size: 2vw;
+        }
+
+        @include mq($med-large) {
+          font-size: 1.6vw;
+        }
+
+        @include mq($xl-large) {
+          font-size: 1.2vw;
+        }
+
+        @include mq($super-wide) {
+          font-size: 1vw;
+        }
+      /*font clamp fallbacks*/
+
+      font-size: clamp(1.1rem, 1.2vw, 1.4rem)!important;
+    }
+
+    p {
+      line-height: 1.7;
+
+        /*font clamp fallbacks*/
+          font-size: 3.3vw;
+
+          @include mq($medium) {
+            font-size: 2vw;
+          }
+
+          @include mq($med-large) {
+            font-size: 1.6vw;
+          }
+
+          @include mq($xl-large) {
+            font-size: 1.2vw;
+          }
+
+          @include mq($super-wide) {
+            font-size: 1vw;
+          }
+        /*font clamp fallbacks*/
+
+        font-size: clamp(1.1rem, 1.2vw, 1.4rem)!important;
+    }
+  }
+}
+
+
